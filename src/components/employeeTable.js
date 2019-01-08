@@ -43,7 +43,7 @@ class EmployeeTable extends React.Component {
               <th style={{width: "90%"}}> ФИО </th>
             </tr>
           </thead>
-          <tbody> { rows } </tbody>
+          <tbody>{ rows }</tbody>
         </table>
       </div>
     );

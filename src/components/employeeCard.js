@@ -53,7 +53,6 @@ class EmployeeEdit extends React.Component {
   }
 
   render() {
-    debugger;
     let employee = this.props.employee;
     return (
       <form style={{width: '50%'}}>
@@ -71,17 +70,17 @@ class EmployeeEdit extends React.Component {
           <div className={'custom-control custom-radio custom-control-inline'}>
             <input type="radio" id="sexMale"
               name="sex" value="male" checked={employee.sex === "male"} onChange={this.onFormChange} className = {'custom-control-input'}/>
-            <label className={'custom-control-label'} for="sexMale">Муж.</label>
+            <label className={'custom-control-label'} htmlFor="sexMale">Муж.</label>
           </div>
           <div className={'custom-control custom-radio custom-control-inline'}>
             <input type="radio" id="sexFemale"
               name="sex" value="female" checked={employee.sex === "female"} onChange={this.onFormChange} className = {'custom-control-input'}/>
-            <label className={'custom-control-label'} for="sexFemale">Жен.</label>
+            <label className={'custom-control-label'} htmlFor="sexFemale">Жен.</label>
           </div>
         </label>
         <div className={"custom-control custom-checkbox"}>
           <input type="checkbox" name="fired" checked={employee.fired} onChange={this.onFormChange} className={"custom-control-input"} id={'fired'}/>
-          <label style={{display: 'block'}} className={"custom-control-label"} for="fired">Уволен</label>
+          <label style={{display: 'block'}} className={"custom-control-label"} htmlFor="fired">Уволен</label>
         </div>
       </form>
     );

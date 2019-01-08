@@ -39,7 +39,6 @@ class MainComponent extends React.Component {
 
   //Меняем состояние с информацией, что карточка сотрудника изменилась
   onFormChange(editedEmployee, e) {
-    debugger;
     let isEmployeeValid = false;
     if (editedEmployee.name && editedEmployee.position) {
       isEmployeeValid = true;
@@ -95,7 +94,7 @@ class MainComponent extends React.Component {
         if (this.state.isUnsavedChanges) {
           this.modalToggle();
         } else {
-          refreshDataStorage();
+          this.refreshDataStorage();
         }
       break
     }
@@ -106,7 +105,10 @@ class MainComponent extends React.Component {
     this.setState({
       employees: storageData,
       isRowSelected: false,
+      editedEmployee: null,
+      selectedEmployeeID: null,
       isUnsavedChanges: false,
+      isEmployeeValid: false,
       modal: false
     });
   }
