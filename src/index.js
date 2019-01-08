@@ -84,7 +84,8 @@ class MainComponent extends React.Component {
           isRowSelected: false,
           isUnsavedChanges: true,
           selectedEmployeeID: null,
-          editedEmployee: null
+          editedEmployee: null,
+          isEmployeeValid: false
         });
       break
       case 'SaveStorage':

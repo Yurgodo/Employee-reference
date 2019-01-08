@@ -12,14 +12,6 @@ module.exports = {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader']
-        },
-        {
-          test: /\.html$/,
-          use: [
-            {
-              loader: "html-loader"
-            }
-          ]
         }
       ]
     },
@@ -32,11 +24,7 @@ module.exports = {
       filename: 'bundle.js'
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new HtmlWebPackPlugin({
-        template: "./src/index.html",
-        filename: "./index.html"
-      })
+      new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
       contentBase: './dist',
