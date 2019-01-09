@@ -102,8 +102,9 @@ class MainComponent extends React.Component {
 
   refreshDataStorage() {
     let storageData = JSON.parse(localStorage.getItem('EMPLOYEES'));
+    let employeesFromStorage = storageData !== null ? storageData : [];
     this.setState({
-      employees: storageData,
+      employees: employeesFromStorage,
       isRowSelected: false,
       editedEmployee: null,
       selectedEmployeeID: null,
