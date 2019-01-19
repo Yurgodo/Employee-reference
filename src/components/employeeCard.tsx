@@ -1,12 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 
-class EmployeeCard extends React.Component {
-  constructor(props) {
+export default class EmployeeCard extends React.Component<IEmployeeCard> {
+  constructor(props: any) {
     super(props);
     this.onFormChange = this.onFormChange.bind(this);
   }
   //Прокидываем информацию об изменении сотрудника в карточке 
-  onFormChange(editedEmployee, e) {
+  onFormChange(editedEmployee: any, e: any) {
     this.props.onEmployeeChange(editedEmployee, e);
   }
 
@@ -30,13 +30,13 @@ class EmployeeCard extends React.Component {
   }
 }
 
-class EmployeeEdit extends React.Component {
-  constructor(props) {
+class EmployeeEdit extends React.Component<IEmployeeEditProps> {
+  constructor(props: any) {
     super(props);
     this.onFormChange = this.onFormChange.bind(this);
   }
 
-  onFormChange(e) {
+  onFormChange(e: any) {
     let name = e.target.name;
     let value = e.target.value;
     let prevEmployee = this.props.employee;
@@ -45,7 +45,7 @@ class EmployeeEdit extends React.Component {
     } else {
       prevEmployee[name] = value;
     }
-    let copyEmployee = {};
+    let copyEmployee:any = {};
     for (var key in prevEmployee) {
       copyEmployee[key] = prevEmployee[key];
     }
@@ -86,5 +86,3 @@ class EmployeeEdit extends React.Component {
     );
   }
 }
-
-export default EmployeeCard;
